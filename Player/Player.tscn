@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/LuzCone.png" type="Texture" id=1]
+[ext_resource path="res://Player/Listener.png" type="Texture" id=2]
+[ext_resource path="res://Player/Player.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28.7949, 16.0873 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, 142 )
+texture_scale = 2.0
+color = Color( 0.996078, 0.988235, 0.435294, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

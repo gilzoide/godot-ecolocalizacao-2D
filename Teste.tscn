@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Parede/Parede.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Materiais/CanvasMaterialLightOnly.tres" type="Material" id=3]
+[ext_resource path="res://EcoLocalizacao/EcoUsandoMouse.gd" type="Script" id=4]
+
+[node name="Teste" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fundo" type="ColorRect" parent="."]
+material = ExtResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.188235, 0.188235, 0.188235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Iluminado somente pela luz do Player"
+}
+
+[node name="Paredes" type="Node2D" parent="."]
+light_mask = -2147483647
+
+[node name="Parede" parent="Paredes" instance=ExtResource( 1 )]
+position = Vector2( 109.125, 308.304 )
+scale = Vector2( 20, 100 )
+
+[node name="Parede2" parent="Paredes" instance=ExtResource( 1 )]
+position = Vector2( 400.477, 375.05 )
+scale = Vector2( 100, 20 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 189.644, 169.514 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -367.0
+margin_right = 2.0
+margin_bottom = 66.0
+text = "Mova o boneco com setinhas
+Ative ecolocalização com o botão esquerdo do mouse"
