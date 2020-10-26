@@ -32,12 +32,8 @@ eco={
  ]
 }
 
-[layer_names]
-
-2d_render/layer_1="Padrão"
-2d_render/layer_2="Paredes"
-
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 0 )
 environment/default_environment="res://default_env.tres"
